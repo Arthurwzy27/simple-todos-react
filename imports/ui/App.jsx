@@ -2,6 +2,7 @@ import React from 'react';
 import { Task } from './components/Task.jsx';
 import { TasksCollection } from '/imports/api/TasksCollection';
 import { useTracker } from 'meteor/react-meteor-data';
+import { TaskForm } from './components/TaskForm.jsx';
 
 
 export const App = () => {
