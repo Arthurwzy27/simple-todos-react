@@ -1,7 +1,7 @@
 import React from 'react';
 import './Task.css';
 
-export const Task = ({ task, onCheckboxClick }) => {
+export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
   return (
     <div className="task__header">
       <li>
@@ -13,6 +13,7 @@ export const Task = ({ task, onCheckboxClick }) => {
         />
 
         <span>{task.text}</span>
+        <button onClick={ () => onDeleteClick(task) }>&times;</button>
       </li>
     </div>
   )
