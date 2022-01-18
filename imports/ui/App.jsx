@@ -26,12 +26,21 @@ export const App = () => {
 
   const deleteTask = ({ _id }) => TasksCollection.remove(_id);
 
+  const pendingTasksCount = useTracker(() =>
+    TasksCollection.find(hideCompletedFilter).count()
+  );
+
+  const pendingTasksTitle = `${
+    pendingTasksCount ? ` (${pendingTasksCount})` : ''
+  }`;
+
   return (
     <div className="app">
       <header>
         <div className="app-bar">
           <div className="app-header">
-            <h1>My Tasks</h1>
+            <h1>My Tasks {pendingTasksTitle}</h1>
+
           </div>
         </div>
       </header>
