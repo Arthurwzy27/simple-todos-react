@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TasksCollection } from '/imports/api/TasksCollection';
 import './TaskForm.css';
 
-export const TaskForm = () => {
+export const TaskForm = ({ user }) => {
   const [text, setText] = useState('');
 
   const handleSubmit = e => {

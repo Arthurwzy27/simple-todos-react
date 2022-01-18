@@ -12,9 +12,9 @@ export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
         />
 
         <span>{task.text}</span>
-        <button onClick={ () => onDeleteClick(task) }>&times;</button>
+        <button onClick={() => onDeleteClick(task)}>&times;</button>
       </li>
-  )
-}
+  );
+};
 
 export default Task;

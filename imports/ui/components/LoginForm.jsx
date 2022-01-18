@@ -16,14 +16,13 @@ export const LoginForm = () => {
     <form onSubmit={submit} className="login-form">
       <div>
         <label htmlFor="username">Username</label>
-
         <input
           type="text"
           placeholder="Username"
           name="username"
           autoComplete="username"
           required
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={e => setUsername(e.target.value)}
         />
       </div>
 
@@ -36,7 +35,7 @@ export const LoginForm = () => {
           name="password"
           autoComplete="current-password"
           required
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
         />
       </div>
 
