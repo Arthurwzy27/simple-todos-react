@@ -11,6 +11,8 @@ export const App = () => {
   return (
     <div>
       <h1>Welcome to Meteor!</h1>
+      <TaskForm/>
+      
       <ul>
         { tasks.map(task =>
           <Task key={ task._id } task={ task }/>)
