@@ -1,9 +1,9 @@
 import React from 'react';
-import './Task.scss';
+import './Task.css';
 
 export const Task = ({ task }) => {
   return (
-    <div>
+    <div className="task__header">
       <li>{task.text}</li>
     </div>
   )

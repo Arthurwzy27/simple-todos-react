@@ -1,5 +1,5 @@
 import React from 'react';
-import Task from './components/Task';
+import { Task } from './components/Task.jsx';
 
 const tasks = [
   {_id: 1, text: 'First Task'},
