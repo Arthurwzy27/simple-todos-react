@@ -10,15 +10,29 @@ import { LoginForm } from './components/LoginForm.jsx';
 export const App = () => {
   const user = useTracker(() => Meteor.user());
 
+  const logout = () => Meteor.logout();
+
   const [hideCompleted, setHideCompleted] = useState(false);
 
   const hideCompletedFilter = { isChecked: { $ne: true } };
 
-  const tasks = useTracker(() =>
-    TasksCollection.find(hideCompleted ? hideCompletedFilter : {}, {
-      sort: { createdAt: -1 },
-    }).fetch()
-  );
+  const userFilter = user ? { userId: user._id } : {};
+
+  const pendingOnlyFilter = { ...hideCompletedFilter, ...userFilter };
+
+
+  const tasks = useTracker(() => {
+     if (!user) {
+        return [];
+      }
+
+    return TasksCollection.find(
+      hideCompleted ? pendingOnlyFilter : userFilter,
+        {
+          sort: { createdAt: -1 },
+        }
+    ).fetch();
+  });
 
   const toggleChecked = ({ _id, isChecked }) => {
     TasksCollection.update(_id, {
@@ -53,6 +67,10 @@ export const App = () => {
       <div className="main">
         {user ? (
           <Fragment>
+            <div className="user" onClick={logout}>
+              {user.username} 🚪
+            </div>
+            
             <TaskForm />
 
             <div className="filter">
