@@ -8,16 +8,40 @@ import { TaskForm } from './components/TaskForm.jsx';
 export const App = () => {
   const tasks = useTracker(() => TasksCollection.find({}, { sort: { createdAt: -1 } }).fetch());
 
-  return (
-    <div>
-      <h1>Welcome to Meteor!</h1>
-      <TaskForm/>
+  const toggleChecked = ({ _id, isChecked }) => {
+    TasksCollection.update(_id, {
+      $set: {
+        isChecked: !isChecked
+      }
+    })
+  };
 
-      <ul>
-        { tasks.map(task =>
-          <Task key={ task._id } task={ task }/>)
-        }
-      </ul>
+  const deleteTask = ({ _id }) => TasksCollection.remove(_id)
+
+  return (
+    <div className="app">
+      <header>
+        <div className="app-bar">
+          <div className="app-header">
+            <h1>My Tasks</h1>
+          </div>
+        </div>
+      </header>
+
+      <div className="main">
+        <TaskForm/>
+        <ul className="tasks">
+          { tasks.map(task =>
+            <Task
+              key={ task._id }
+              task={ task }
+              onCheckboxClick={toggleChecked}
+              onDeleteClick={deleteTask}
+            />
+            )
+          }
+        </ul>
+      </div>
     </div>
   )
 };
