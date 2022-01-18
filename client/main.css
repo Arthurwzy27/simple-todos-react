@@ -77,3 +77,11 @@ header {
   margin-right: 1em;
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter > button {
+  background-color: #62807e;
+}
