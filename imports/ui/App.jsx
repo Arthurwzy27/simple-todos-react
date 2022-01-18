@@ -7,6 +7,7 @@ import { TaskForm } from './components/TaskForm.jsx';
 
 export const App = () => {
   const tasks = useTracker(() => TasksCollection.find({}, { sort: { createdAt: -1 } }).fetch());
+
   const toggleChecked = ({ _id, isChecked }) => {
     TasksCollection.update(_id, {
       $set: {
@@ -15,16 +16,32 @@ export const App = () => {
     })
   };
 
-  return (
-    <div>
-      <h1>Welcome to Meteor!</h1>
-      <TaskForm/>
+  const deleteTask = ({ _id }) => TasksCollection.remove(_id)
 
-      <ul>
-        { tasks.map(task =>
-          <Task key={ task._id } task={ task } onCheckboxClick={toggleChecked} />)
-        }
-      </ul>
+  return (
+    <div className="app">
+      <header>
+        <div className="app-bar">
+          <div className="app-header">
+            <h1>My Tasks</h1>
+          </div>
+        </div>
+      </header>
+
+      <div className="main">
+        <TaskForm/>
+        <ul className="tasks">
+          { tasks.map(task =>
+            <Task
+              key={ task._id }
+              task={ task }
+              onCheckboxClick={toggleChecked}
+              onDeleteClick={deleteTask}
+            />
+            )
+          }
+        </ul>
+      </div>
     </div>
   )
 };
