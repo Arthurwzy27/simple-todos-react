@@ -1,24 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, Fragment } from 'react';
 import { Task } from './components/Task.jsx';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { TasksCollection } from '/imports/db/TasksCollection';
 import { useTracker } from 'meteor/react-meteor-data';
 import { TaskForm } from './components/TaskForm.jsx';
 import { LoginForm } from './components/LoginForm.jsx';
 
-const toggleChecked = ({ _id, isChecked }) => {
-    TasksCollection.update(_id, {
-      $set: {
-        isChecked: !isChecked
-      }
-    })
-  };
+const toggleChecked = ({ _id, isChecked }) =>
+  Meteor.call('tasks.setIsChecked', _id, !isChecked);
 
-  const deleteTask = ({ _id }) => TasksCollection.remove(_id);
+  const deleteTask = ({ _id }) => Meteor.call('tasks.remove', _id);
 
 export const App = () => {
   const user = useTracker(() => Meteor.user());
-
 
   const [hideCompleted, setHideCompleted] = useState(false);
 
