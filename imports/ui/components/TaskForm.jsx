@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { Meteor } from 'meteor/meteor';
 import './TaskForm.css';
-import TextField from '@mui/material/TextField';
 
 
 export const TaskForm = ({ user }) => {
@@ -12,11 +11,13 @@ export const TaskForm = ({ user }) => {
 
     if (!text) return;
 
-    TasksCollection.insert({
-      text: text.trim(),
-      createdAt: new Date(),
-      userId: user._id
-    });
+    Meteor.call('tasks.insert', text);
+
+    // TasksCollection.insert({
+    //   text: text.trim(),
+    //   createdAt: new Date(),
+    //   userId: user._id
+    // });
 
     setText('');
   };
