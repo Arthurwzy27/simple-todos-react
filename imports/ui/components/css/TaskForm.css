@@ -1,0 +1,24 @@
+.task-form {
+  display: flex;
+  margin: 16px;
+  justify-content: center;
+}
+
+#standard-basic {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
+.task-form > input:focus {
+  outline: 0;
+}
+
+#standard-basic {
+  width: 800px;
+}
+
+.task-form > button {
+  min-width: 100px;
+  height: 95%;
+  background-color: rgb(27, 141, 42);
+}

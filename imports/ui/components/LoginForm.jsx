@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
-import './LoginForm.css';
+import './css/LoginForm.css';
 
 export const LoginForm = () => {
   const [username, setUsername] = useState('');

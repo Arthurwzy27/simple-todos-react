@@ -1,11 +1,12 @@
 import React from 'react';
-import './Task.css';
+import './css/Task.css';
 
 export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
   return (
       <li>
         <input
           type="checkbox"
+          className="chckbox"
           checked={!!task.isChecked}
           onClick={() => onCheckboxClick(task)}
           readOnly

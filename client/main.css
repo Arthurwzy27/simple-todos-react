@@ -30,6 +30,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
 }
 
 .app-header {
@@ -46,6 +47,42 @@ button:focus {
   overflow: auto;
   width: 100vw;
   height: 100vh;
+  background-image: url('https://www.teahub.io/photos/full/8-80264_gaussian-blur-background.jpg');
+
+}
+
+header {
+  text-align: center;
+  margin: 70px 0 40px 0;
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+
+}
+
+/* USERNAME */
+.user {
+  display: flex;
+  align-self: flex-end;
+  margin: 18px 16px;
+  font-weight: bold;
+  padding-right: 28px;
+}
+
+.user > p {
+  justify-content: space-around;
+  padding-left: 25px;
+  align-items: center;
+
+}
+
+.user > .user-avatar {
+  background-color: #5c5a5a;
+}
+
+.primary {
+  margin: 100px;
+  margin-top: 10;
 
 }
 
@@ -80,18 +117,12 @@ main {
 }
 
 .filter > button {
-  background-color: #ddb4db;
-  border-radius: 25px;
+  background-color: #f5089a77;
+  border-radius: 5px;
   width: 130px;
+  margin-bottom: 30px;
 }
 
-/* USERNAME */
-.user {
-  display: flex;
-  align-self: flex-end;
-  margin: 8px 16px 0;
-  font-weight: bold;
-}
 
 /* LOADING STATE */
 .loading {

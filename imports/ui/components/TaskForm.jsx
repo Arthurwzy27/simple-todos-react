@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import './TaskForm.css';
+import './css/TaskForm.css';
+import TextField from '@mui/material/TextField';
 
 
 export const TaskForm = ({ user }) => {
@@ -13,31 +14,19 @@ export const TaskForm = ({ user }) => {
 
     Meteor.call('tasks.insert', text);
 
-    // TasksCollection.insert({
-    //   text: text.trim(),
-    //   createdAt: new Date(),
-    //   userId: user._id
-    // });
-
     setText('');
   };
 
   return (
     <form className="task-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Type to add new tasks"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      {/* <TextField
+      <TextField
         id="standard-basic"
-        label="Type to add new tasks"
+        label="What needs to be done?"
         variant="standard"
         value={text}
+        autoComplete="off"
         onChange={(e) => setText(e.target.value)}
-        /> */}
-
+        />
       <button type="submit">Add Task</button>
     </form>
   );
