@@ -11,7 +11,7 @@ const insertTask = (taskText, user) =>
   });
 
 // Creating User account:
-const SEED_USERNAME = 'meteorite';
+const SEED_USERNAME = 'arthur';
 const SEED_PASSWORD = 'password';
 
 Meteor.startup(() => {
