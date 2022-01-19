@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState, Fragment } from 'react';
 import { Task } from './components/Task.jsx';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { TasksCollection } from '/imports/db/TasksCollection';
 import { useTracker } from 'meteor/react-meteor-data';
 import { TaskForm } from './components/TaskForm.jsx';
 import { LoginForm } from './components/LoginForm.jsx';
