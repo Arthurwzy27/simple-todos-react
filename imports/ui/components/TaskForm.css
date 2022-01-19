@@ -1,11 +1,13 @@
 .task-form {
   display: flex;
   margin: 16px;
+  
 }
 
 .task-form > input {
   flex-grow: 1;
   box-sizing: border-box;
+  border-radius: 15px;
   padding: 10px 6px;
   background: transparent;
   border: 1px solid #aaa;

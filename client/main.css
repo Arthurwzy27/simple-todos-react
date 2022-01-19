@@ -1,18 +1,14 @@
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-color: transparent;
   background-attachment: fixed;
-
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
   padding: 0;
   margin: 0;
-
   font-size: 14px;
 }
 
@@ -48,7 +44,9 @@ button:focus {
   flex-direction: column;
   flex-grow: 1;
   overflow: auto;
-  background: white;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .main::-webkit-scrollbar {
@@ -57,10 +55,9 @@ button:focus {
   background: inherit;
 }
 
-header {
+main {
   background: #d2edf4;
   background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-  padding: 20px 15px 15px 15px;
   position: relative;
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
 }
@@ -74,7 +71,7 @@ header {
   font-size: 1.5em;
   margin: 0;
   display: inline-block;
-  margin-right: 1em;
+  align-items: center
 }
 
 .filter {
@@ -83,14 +80,14 @@ header {
 }
 
 .filter > button {
-  background-color: #62807e;
+  background-color: #ddb4db;
+  border-radius: 25px;
+  width: 130px;
 }
 
 .user {
   display: flex;
-
   align-self: flex-end;
-
   margin: 8px 16px 0;
   font-weight: bold;
 }
