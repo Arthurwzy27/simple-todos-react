@@ -27,17 +27,17 @@ describe('Visit the Home Page', () => {
       .should('be.checked')
   })
 
-  // // It can add a second todo task inside the task list
-  // it ('add a new todo task', () => {
-  //   const newTask = 'Finish the first Cypress test'
-  //   cy.get('[data-cy=new-todo]').type(`${newTask}{enter}`)
-  //   cy.get('[data-cy=task-item]')
-  //     .first()
-  //     .should('have.text', newTask)
-  //   cy.get('[data-cy=checkbox]')
-  //     .first()
-  //     .should('not.be.checked')
-  // })
+  // It can add a second todo task inside the task list
+  it ('add a new todo task', () => {
+    const newTask = 'Finish the first Cypress test'
+    cy.get('[data-cy=new-todo]').type(`${newTask}{enter}`)
+    cy.get('[data-cy=task-item]')
+      .first()
+      .should('have.text', newTask)
+    cy.get('[data-cy=checkbox]')
+      .first()
+      .should('not.be.checked')
+  })
 
   // it ('hide all completed task', () => {
 
