@@ -21,8 +21,7 @@ export const LoginForm = () => {
           placeholder="Username"
           name="username"
           autoComplete="username"
-          id="login-username"
-          data-test="username"
+          data-cy="login-username"
           required
           onChange={e => setUsername(e.target.value)}
         />
@@ -36,8 +35,7 @@ export const LoginForm = () => {
           placeholder="Password"
           name="password"
           autoComplete="current-password"
-          id="login-password"
-          data-test="password"
+          data-cy="password"
           required
           onChange={e => setPassword(e.target.value)}
         />

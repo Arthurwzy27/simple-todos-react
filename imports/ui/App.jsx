@@ -74,10 +74,8 @@ export const App = () => {
             {isLoading && <div className="loading">loading...</div>}
             <div className="primary">
               <div className="filter">
-                <button
-                  onClick={() => setHideCompleted(!hideCompleted)}
-                  data-cy="filter-button">
-                    {hideCompleted ? 'Show All' : 'Hide Completed'}
+                <button onClick={() => setHideCompleted(!hideCompleted)}>
+                  {hideCompleted ? 'Show All' : 'Hide Completed'}
                 </button>
               </div>
               <ul className="tasks">

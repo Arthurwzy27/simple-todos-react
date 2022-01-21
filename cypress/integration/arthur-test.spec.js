@@ -1,9 +1,9 @@
 describe('Visit the Home Page', () => {
   // Connect as a user
   it ('Connect as a user', () => {
-    cy.visit('http://localhost:3000')
-    cy.get('#login-username').type('arthur')
-    cy.get('#login-password').type('password')
+    cy.visit('https://mytodo.meteorapp.com')
+    cy.get('[data-cy=login-username]').type('arthur')
+    cy.get('[data-cy=login-password').type('password')
     cy.get('[data-cy=login-submit]').click()
   })
 
