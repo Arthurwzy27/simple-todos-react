@@ -84,6 +84,7 @@ header {
 .primary {
   margin: 100px;
   margin-top: 10;
+  text-align: -webkit-center;
 
 }
 
