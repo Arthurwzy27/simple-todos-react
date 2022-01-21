@@ -6,7 +6,8 @@ export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
       <li>
         <input
           type="checkbox"
-          className="chckbox"
+          className="checkbox"
+          data-cy="checkbox"
           checked={!!task.isChecked}
           onClick={() => onCheckboxClick(task)}
           readOnly
