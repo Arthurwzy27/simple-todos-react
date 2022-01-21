@@ -21,6 +21,7 @@ export const TaskForm = ({ user }) => {
     <form className="task-form" onSubmit={handleSubmit}>
       <TextField
         id="standard-basic"
+        data-cy="new-todo"
         label="What needs to be done?"
         variant="standard"
         value={text}

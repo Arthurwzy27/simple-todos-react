@@ -21,6 +21,8 @@ export const LoginForm = () => {
           placeholder="Username"
           name="username"
           autoComplete="username"
+          id="login-username"
+          data-test="username"
           required
           onChange={e => setUsername(e.target.value)}
         />
@@ -34,13 +36,15 @@ export const LoginForm = () => {
           placeholder="Password"
           name="password"
           autoComplete="current-password"
+          id="login-password"
+          data-test="password"
           required
           onChange={e => setPassword(e.target.value)}
         />
       </div>
 
       <div>
-        <button type="submit">Log In</button>
+        <button type="submit" data-cy="login-submit">Log In</button>
       </div>
     </form>
   );

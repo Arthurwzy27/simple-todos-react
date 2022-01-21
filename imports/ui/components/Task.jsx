@@ -13,7 +13,7 @@ export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
           readOnly
         />
 
-        <span>{task.text}</span>
+        <span data-cy="task-item">{task.text}</span>
         <button onClick={() => onDeleteClick(task)}>&times;</button>
       </li>
   );
