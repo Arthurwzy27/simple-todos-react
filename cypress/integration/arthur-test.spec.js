@@ -7,16 +7,16 @@ describe('Visit the Home Page', () => {
     cy.get('[data-cy=login-submit]').click()
   })
 
-  // it ('can add a new todo task and be mark as not completed', () => {
-  //   const newTask = 'Finish the first Cypress test'
-  //   cy.get('[data-cy=new-todo]').type(`${newTask}{enter}`)
-  //   cy.get('[data-cy=task-item]')
-  //     .first()
-  //     .should('have.text', newTask)
-  //   cy.get('[data-cy=checkbox]')
-  //     .first()
-  //     .should('not.be.checked')
-  // })
+  it ('can add a new todo task and be mark as not completed', () => {
+    const newTask = 'Finish the first Cypress test'
+    cy.get('[data-cy=new-todo]').type(`${newTask}{enter}`)
+    cy.get('[data-cy=task-item]')
+      .first()
+      .should('have.text', newTask)
+    cy.get('[data-cy=checkbox]')
+      .first()
+      .should('not.be.checked')
+  })
 
   // // Check if a task is marked as Completed
   // it ('task is completed', () => {
