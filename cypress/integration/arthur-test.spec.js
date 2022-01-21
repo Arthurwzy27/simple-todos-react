@@ -18,14 +18,14 @@ describe('Visit the Home Page', () => {
       .should('not.be.checked')
   })
 
-  // // Check if a task is marked as Completed
-  // it ('task is completed', () => {
-  //   cy.get('[data-cy=checkbox]')
-  //     .first()
-  //     .should('not.be.checked')
-  //     .click()
-  //     .should('be.checked')
-  // })
+  // Check if a task is marked as Completed
+  it ('task is completed', () => {
+    cy.get('[data-cy=checkbox]')
+      .first()
+      .should('not.be.checked')
+      .click()
+      .should('be.checked')
+  })
 
   // // It can add a second todo task inside the task list
   // it ('add a new todo task', () => {
