@@ -6,14 +6,18 @@ export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
       <li>
         <input
           type="checkbox"
-          className="chckbox"
+          className="checkbox"
+          data-cy="checkbox"
           checked={!!task.isChecked}
           onClick={() => onCheckboxClick(task)}
           readOnly
         />
 
-        <span>{task.text}</span>
-        <button onClick={() => onDeleteClick(task)}>&times;</button>
+        <span data-cy="task-item">{task.text}</span>
+        <button onClick={() => onDeleteClick(task)}
+        data-cy="delete-task-item">
+          &times;
+        </button>
       </li>
   );
 };
