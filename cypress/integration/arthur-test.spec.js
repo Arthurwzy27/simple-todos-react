@@ -39,9 +39,10 @@ describe('Visit the Home Page', () => {
       .should('not.be.checked')
   })
 
-  // it ('hide all completed task', () => {
-
-  // })
+  // Hide all completed task
+  it ('hide all completed task', () => {
+    
+  })
 
 })
 
