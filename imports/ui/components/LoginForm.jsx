@@ -35,7 +35,7 @@ export const LoginForm = () => {
           placeholder="Password"
           name="password"
           autoComplete="current-password"
-          data-cy="password"
+          data-cy="login-password"
           required
           onChange={e => setPassword(e.target.value)}
         />
