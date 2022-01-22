@@ -7,11 +7,12 @@ describe('Visit the Home Page', () => {
     cy.get('[data-cy=login-submit]').click()
   })
 
-  // Add a first todo task inside the task list
+  // Add a first todo task inside the task list and mark as not completed
   it ('Add a new todo task and be mark as not completed', () => {
     const newTask = '1. Creating first test'
 
     cy.get('[data-cy=new-todo]').type(`${newTask}{enter}`)
+      .wait(500)
     cy.get('[data-cy=task-item]')
       .first()
       .should('have.text', newTask)
@@ -20,11 +21,13 @@ describe('Visit the Home Page', () => {
       .should('not.be.checked')
   })
 
+
   // Add a second todo task inside the task list (Task 2)
   it ('Add a second new todo task', () => {
     const taskTwo = '2. Send the ToDo app link'
 
     cy.get('[data-cy=new-todo]').type(`${taskTwo}{enter}`)
+      .wait(500)
     cy.get('[data-cy=task-item]')
       .first()
       .should('have.text', taskTwo)
