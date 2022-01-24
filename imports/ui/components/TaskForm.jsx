@@ -26,7 +26,6 @@ export const TaskForm = ({ user }) => {
         variant="standard"
         inputProps={{ maxLength: 100 }}
         required={true}
-        // error="Max. 8 characters"
         value={text}
         autoComplete="off"
         onChange={(e) => setText(e.target.value)}
