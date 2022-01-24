@@ -56,6 +56,7 @@ describe('Visit the Home Page', () => {
 
   //Reset database prior to every test
   it ('Reset db', () => {
+    cy.get('[data-cy=filter-button]').click()
     cy.get('[data-cy=delete-task-item]').click({ multiple: true })
   })
 

@@ -1,16 +1,19 @@
 .tasks {
-  list-style-type: none;
-  padding-inline-start: 0;
-  padding: 0 100px;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  width: 50%;
-  margin-top: 30px;
+  display: grid;
+  padding-left: 0;
+  margin-top: 20px;
+  /* width: 75vw; */
+  justify-content: center
+}
+
+.task-responsive {
+  position: inherit;
+  width: 50%
 }
 
 .tasks > li {
   display: flex;
-  padding: 16px 0;
+  padding: 16px 10%;
   border-bottom: 1px solid rgba(78, 78, 78, 0.267);
   align-items: center;
   justify-content: space-between;
@@ -22,6 +25,8 @@
   flex-grow: 1;
   text-align: justify;
   padding: 0 25px;
+  margin-right: 15px;
+  width: 50vw;
 }
 
 .tasks > li > button {

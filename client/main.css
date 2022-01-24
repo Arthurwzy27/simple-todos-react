@@ -30,14 +30,6 @@ button:focus {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-}
-
-.app-header {
-  flex-grow: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .main {
@@ -82,9 +74,8 @@ header {
 }
 
 .primary {
-  margin: 50px;
-  margin-top: 10;
-  text-align: -webkit-center;
+  margin-top: 50px;
+  text-align: center;
 
 }
 
@@ -101,13 +92,8 @@ main {
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
 }
 
-.app-bar {
-  display: flex;
-  justify-content: space-between;
-}
-
 .app-bar h1 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 0;
   display: inline-block;
   align-items: center

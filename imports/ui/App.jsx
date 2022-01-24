@@ -57,13 +57,10 @@ export const App = () => {
           <div className="user" onClick={logout}>
             <Avatar className="user-avatar" alt="Arthur Picard" src="#" color="#red" />
             <p>Log out</p>
-            {/* {user.username} 🚪 */}
           </div>
         <header>
           <div className="app-bar">
-            <div className="app-header">
-              <h1>Today's Tasks {pendingTasksTitle}</h1>
-            </div>
+            <h1>Today's Tasks {pendingTasksTitle}</h1>
           </div>
         </header>
 
@@ -84,6 +81,7 @@ export const App = () => {
                 { tasks.map(task => (
                   <Task
                     key={task._id}
+                    className="task-responsive"
                     task={task}
                     onCheckboxClick={toggleChecked}
                     onDeleteClick={deleteTask}
